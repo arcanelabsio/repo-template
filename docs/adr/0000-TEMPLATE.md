@@ -3,7 +3,6 @@ id: ADR-NNNN
 title: Short declarative decision statement
 status: Proposed
 date: YYYY-MM-DD
-applies_pattern: PTRN-NNN   # optional — link to arcanelabsio-patterns if relevant
 supersedes: ADR-NNNN        # optional — if this ADR replaces a prior one
 superseded_by: ADR-NNNN     # optional — filled in when THIS ADR is later superseded
 ---

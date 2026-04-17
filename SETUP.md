@@ -8,7 +8,6 @@ Tokens to replace:
 |---|---|
 | `{{REPO_NAME}}` | The new repo's short name (e.g. `forge`, `shellcraft`) |
 | `{{REPO_PURPOSE}}` | One-sentence description of what the repo does |
-| `{{SIBLING_REPOS}}` | Markdown list of 2–3 sibling Arcane Labs repos for the org-hook |
 | `{{LANGUAGE}}` | Primary language / stack (e.g. `Node 22`, `Flutter 3.x`, `Python 3.12`, `Bash`) |
 | `{{ADR_DECISION_1}}`, `{{ADR_DECISION_2}}`, `{{ADR_DECISION_3}}` | First three ADRs you'll backfill |
 
@@ -46,7 +45,7 @@ Recommended opening:
 ```markdown
 # {{REPO_NAME}}
 
-> Built at **[Arcane Labs](https://github.com/arcanelabsio)** — local-first, BYO-AI tools. Sibling projects: {{SIBLING_REPOS}}.
+> Built at **[Arcane Labs](https://github.com/arcanelabsio)**.
 
 **{{REPO_PURPOSE}}**
 

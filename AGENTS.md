@@ -39,7 +39,6 @@ A PR that weakens an invariant without superseding the ADR that established it m
 - **Security model:** [`SECURITY_MODEL.md`](./SECURITY_MODEL.md) — the architectural threat model
 - **Security reporting:** [`SECURITY.md`](./SECURITY.md)
 - **Contribution guide:** [`CONTRIBUTING.md`](./CONTRIBUTING.md)
-- **Org-wide patterns:** [`arcanelabsio/.github`](https://github.com/arcanelabsio/.github) profile and the [pattern registry](https://github.com/arcanelabsio/arcanelabsio-patterns)
 
 ## Onboarding order for a new contributor (human or agent)
 

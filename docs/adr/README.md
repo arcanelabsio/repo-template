@@ -6,7 +6,6 @@ Numbered records of architectural decisions in this repo. Each ADR captures the 
 
 - Numbering is sequential, zero-padded to 4 digits (`ADR-0001`, `ADR-0002`). The `0000-TEMPLATE.md` file is not itself an ADR — copy it when authoring a new one.
 - Status is one of `Proposed`, `Accepted`, `Superseded`, `Deprecated`.
-- When an org-level pattern applies, set `applies_pattern: PTRN-NNN` in the frontmatter — see the [arcanelabsio-patterns registry](https://github.com/arcanelabsio/arcanelabsio-patterns).
 - **ADRs are immutable after acceptance.** If the decision changes, supersede the old ADR with a new one and set the old to `Superseded`. Do not edit the record of the past.
 
 ## When to write one

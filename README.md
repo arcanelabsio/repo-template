@@ -37,12 +37,9 @@ Then open [`SETUP.md`](./SETUP.md) and work through the post-clone checklist. It
 ## Org conventions this template encodes
 
 - **`AGENTS.md` is authoritative.** Not `CLAUDE.md`, not `.cursorrules`, not per-tool files. One source, many readers.
-- **ADRs live in `docs/adr/`.** Numbered, immutable after acceptance, supersede rather than edit. When an org-level pattern applies, set `applies_pattern: PTRN-NNN` referencing the [pattern registry](https://github.com/arcanelabsio/arcanelabsio-patterns).
+- **ADRs live in `docs/adr/`.** Numbered, immutable after acceptance, supersede rather than edit.
 - **`SECURITY.md` is the policy; `SECURITY_MODEL.md` is the architecture.** Two different documents, two different audiences.
 - **Conventional Commits, no `Co-Authored-By:` trailers.** `feat|fix|chore|docs|refactor|test|ci(<scope>): <subject>`.
-- **Public-by-default README carries a one-line org hook** naming siblings so portfolio visitors can find the rest.
-
-For the full org-wide pattern catalog see [`arcanelabsio/.github`](https://github.com/arcanelabsio/.github) (the org profile) and the [pattern registry](https://github.com/arcanelabsio/arcanelabsio-patterns).
 
 ## Maintaining this template
 
@@ -52,7 +49,7 @@ This repo is the source of truth for org-level scaffolding. Changes here don't r
 2. Open a tracking issue in each downstream repo naming the template change and what needs copying over.
 3. Downstream repos pull the change opportunistically, not as a sync.
 
-When adding a new convention, update the [org profile ARCHITECTURE doc](https://github.com/arcanelabsio/.github) so first-time visitors see the pattern named, then reflect it here.
+When adding a new convention, land the change here with a clear commit message and let downstream repos pull it in opportunistically.
 
 ## License
 
