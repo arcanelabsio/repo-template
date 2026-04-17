@@ -1,0 +1,51 @@
+name: Feature request
+description: Propose a new capability, extension, or improvement.
+title: "[feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For **structural changes** — new data flows, storage shifts, trust-boundary changes, new scope — please read [`docs/adr/README.md`](../../docs/adr/README.md) first. Those typically need an ADR. This issue is the right place to start the conversation.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: The user-visible pain point, not the proposed solution.
+      placeholder: "I want to …, but today the tool …."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-direction
+    attributes:
+      label: Suggested direction (optional)
+      description: If you have a proposal in mind, describe it. Clearly separate the problem from the solution.
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What else did you think about? Saying "I considered X but Y" is often the fastest way to alignment.
+    validations:
+      required: false
+  - type: dropdown
+    id: stakes
+    attributes:
+      label: Stakes
+      description: How load-bearing is this change?
+      options:
+        - Small quality-of-life improvement
+        - Medium — new feature, no contract changes
+        - High — changes a contract, storage shape, or trust boundary (needs ADR)
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-flight
+      options:
+        - label: I've searched existing issues and discussions.
+          required: true
+        - label: If this is a contract / structural change, I understand an ADR will be required before merge.
+          required: true

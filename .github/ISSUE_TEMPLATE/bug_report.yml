@@ -1,0 +1,53 @@
+name: Bug report
+description: Something broke, produced a wrong result, or behaved unexpectedly.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report. Please do **not** include secrets, personal data, or anything sensitive in this issue — we'll treat it as public.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the unexpected behavior. What did you see?
+      placeholder: "The validator exited 0 on a file that violates rule X."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect instead?
+      placeholder: "Exit code 2 with a rule-violation message."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps. If you can share a fixture file or command, even better.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, version, tool versions, anything else that might matter.
+      placeholder: "macOS 14.4, Node 22.5, installed via npx"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-flight
+      options:
+        - label: I've searched existing issues and this isn't a duplicate.
+          required: true
+        - label: This is not a security vulnerability. (Those go to apps@arcanelabs.info.)
+          required: true

@@ -1,0 +1,47 @@
+name: CI
+
+# Minimal, language-agnostic starter CI. Extend during SETUP.md step 6:
+#   - Node: add a job that runs `npm ci && npm test`
+#   - Flutter: add a job that runs `flutter analyze && flutter test`
+#   - Python: add a job that runs `pytest`
+#   - Bash: add a job that runs `shellcheck` + `bats tests/`
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    name: Docs quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Markdown lint
+        uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          globs: |
+            **/*.md
+            !node_modules/**
+            !vendor/**
+            !.venv/**
+          config: |
+            {
+              "default": true,
+              "MD013": false,
+              "MD024": { "siblings_only": true },
+              "MD033": false,
+              "MD041": false
+            }
+
+      - name: Link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress --exclude-mail '**/*.md'
+          fail: false   # start non-blocking; tighten after backlog is clean
