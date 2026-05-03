@@ -1,0 +1,2 @@
+# Entrypoint + wiring. The only zone that touches the real world (env, args, OS).
+# Imports core/ and features/; nothing imports shell/.

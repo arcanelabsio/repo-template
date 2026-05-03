@@ -1,0 +1,4 @@
+# Sample data, scratch files, local fixtures — gitignored by default.
+# If a fixture should be checked in, move it to tests/fixtures/.
+*
+!.gitignore

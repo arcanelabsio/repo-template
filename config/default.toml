@@ -1,0 +1,28 @@
+# {{REPO_NAME}} — default configuration
+#
+# Resolved at runtime; merged with user overrides at `~/{{REPO_NAME}}/config.toml` (deep merge).
+# Replace placeholders during SETUP.md step 5. Keep this file in source control;
+# never put secrets here.
+
+[app]
+name = "{{REPO_NAME}}"
+version = "0.1.0"
+
+[storage]
+# `~` expands to user home at runtime; never write a literal path here.
+data_dir = "~/{{REPO_NAME}}"
+backup_count = 10
+atomic_writes = true
+
+[sync]
+enabled = false
+provider = "icloud"      # icloud | drive | s3 | none
+shadow_dir = "~/.{{REPO_NAME}}/sync-shadow"
+
+[performance]
+debounce_writes_ms = 300
+max_in_memory_items = 10000
+
+[logging]
+level = "info"           # debug | info | warn | error
+file = "~/.{{REPO_NAME}}/log.jsonl"

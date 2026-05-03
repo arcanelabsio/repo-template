@@ -25,6 +25,12 @@ grep -rl '{{REPO_NAME}}' --exclude-dir=.git . | xargs sed -i 's/{{REPO_NAME}}/yo
 
 Repeat for each token in the table above. A final `grep -r '{{' --exclude-dir=.git .` should return nothing.
 
+Then initialize the per-fork state file. `STATE.md` is gitignored on purpose — it tracks ephemeral progress and shouldn't travel with the repo's history; `STATE.template.md` ships in VCS as the skeleton.
+
+```bash
+cp STATE.template.md STATE.md
+```
+
 ## 2. Pick a license
 
 The template ships MIT. If your repo's posture requires AGPL (typically: an end-user app with strong copyleft intent, e.g. Vael) or a proprietary license (typically: a closed product), replace `LICENSE` now.
@@ -65,15 +71,23 @@ The template ships with skeleton sections. For each one:
 
 If your repo has a rich workflow (like Longeviti's `ELARA → ATLAS`), add a **Workflow Map** section after the rules.
 
-## 5. Backfill 2–3 ADRs
+## 5. Review inherited ADRs and add repo-specific ones
 
-The [ADR README](./docs/adr/README.md) explains the convention. For every repo worth keeping, there are 2–3 decisions that were made implicitly at some point and should be recorded:
+The template ships **5 starter ADRs** (0001–0005) covering the convention itself, filesystem-first persistence, behavior-over-implementation testing, `Result`-typed error handling, and lightweight signal-based state. Forks inherit these as `Accepted`.
+
+For each, decide:
+
+- **Keep** — the default fits this repo. No action.
+- **Supersede** — your constraints conflict (e.g., this is a multi-tenant server, not single-user filesystem). Write a new ADR that supersedes the inherited one and set the old status to `Superseded`. Don't edit the inherited record — immutability is the point.
+- **Extend** — the default is correct but needs repo-specific elaboration. Write a new ADR that cites the inherited one (e.g., "extends ADR-0002 by specifying iCloud Drive as the sync transport").
+
+Then add 1–2 repo-specific ADRs for the decisions only this repo makes:
 
 - *Why this language / framework?* (often a one-line answer; write it anyway)
-- *Why this storage model?* (SQLite? plain JSON? user-owned cloud?)
-- *What's deliberately out of scope?* (e.g. Shellcraft's "no Linux support" is an ADR)
+- *Why this trust boundary / sync transport?* — if it specializes ADR-0002.
+- *What's deliberately out of scope?* (e.g., Shellcraft's "no Linux support" is an ADR)
 
-Use `docs/adr/0000-TEMPLATE.md` as the starting point. Number them `0001`, `0002`, `0003`.
+Use `docs/adr/0000-TEMPLATE.md` as the starting point. Number new ADRs sequentially from `0006`.
 
 ## 6. Prune the CI workflow
 

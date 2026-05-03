@@ -1,0 +1,2 @@
+# Feature folders go here, one per vertical slice.
+# Each feature owns its data model, persistence, UI, and tests, with a single public export.

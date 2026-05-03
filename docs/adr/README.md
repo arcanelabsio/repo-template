@@ -26,4 +26,12 @@ Copy `0000-TEMPLATE.md` to the next number, fill in each section, and open a PR.
 
 <!-- Update this index as ADRs land. -->
 
-- _No ADRs yet. Backfill 2–3 as part of [`SETUP.md`](../../SETUP.md) step 5._
+| ID | Title | Status | File |
+|---|---|---|---|
+| ADR-0001 | Record architecture decisions in this repo | Accepted | [`0001-record-architecture-decisions.md`](./0001-record-architecture-decisions.md) |
+| ADR-0002 | Persist data on the filesystem, not in a database server | Accepted | [`0002-filesystem-first-persistence.md`](./0002-filesystem-first-persistence.md) |
+| ADR-0003 | Test behavior at boundaries, not implementation details | Accepted | [`0003-testing-philosophy.md`](./0003-testing-philosophy.md) |
+| ADR-0004 | Use Result types for expected errors; throw for bugs | Accepted | [`0004-error-handling-result-types.md`](./0004-error-handling-result-types.md) |
+| ADR-0005 | Use lightweight signals for state; avoid heavy frameworks until justified | Accepted | [`0005-state-management-signals.md`](./0005-state-management-signals.md) |
+
+> **ADRs 0001–0005 are inherited from `repo-template`.** Each new repo starts with these as accepted defaults. If a repo's constraints contradict one (e.g., it's a multi-tenant server, not single-user filesystem-first), supersede the ADR with a new one — don't edit the inherited record. See [SETUP.md](../../SETUP.md) for the per-repo review pass.
